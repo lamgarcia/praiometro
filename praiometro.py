@@ -44,20 +44,6 @@ st.subheader('Encontre as praias ideais para sua viagem, escolhendo o mês perfe
 st.subheader('Afinal, viajar é uma experiência única e merece ser vivida sob o sol radiante.*')
 
 
-# Função para renderizar o código de rastreamento
-def render_analytics():
-    st.markdown(
-        '''
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-YVNH934KXN"></script>
-        <script>
-           window.dataLayer = window.dataLayer || [];
-           function gtag(){{dataLayer.push(arguments);}}
-           gtag('js', new Date());
-           gtag('config', 'G-YVNH934KXN');
-        </script>
-        ''', unsafe_allow_html=True
-    )
-
 def change_label_style(label, font_size='12px', font_color='black', font_family='sans-serif'):
     html = f"""<script>
         var elems = window.parent.document.querySelectorAll('p');
@@ -201,7 +187,8 @@ def atualiza_contador_visitas():
 # Função principal do Streamlit
 def main():
 
-    st.sidebar.markdown(
+    #st.sidebar.markdown(
+    st.markdown(
     """ <style>
     .sidebar .sidebar-content {
         background-image: linear-gradient(#2e7bcf,#2e7bcf);
@@ -232,7 +219,7 @@ def main():
     conn.close()
 
     # FORM SIDEBAR 
-    with st.sidebar:
+    with st.sidebar():
 
         logo_url = "./assets/logo_praiometro_transparente.png"
         st.image(logo_url)
@@ -346,7 +333,6 @@ def main():
 
 
     st.write("*Nossos dados são atualizados das estações metereológicas do [INMET](https://portal.inmet.gov.br/) para transformar suas viagens em experiências inesquecíveis. Não fazemos previsões metereológicas, calculamos uma média dos anos passados recentes. Bem como ocorre nas previsões de tempo, não há garantias de 100% de que se repetirá no futuro. As cidades listadas são das estações metereológica, verifique se é perto do seu destino no mapa. As principais cidades de férias estão disponíveis como Fortaleza, Natal, Recife, João Pessoa, Aracaju, Salvador, Maceió, Rio de Janeiro, São Paulo, Florianópolis e outras.")
-    render_analytics()
 
 if __name__ == "__main__":
     main()
