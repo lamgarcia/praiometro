@@ -12,22 +12,16 @@ import streamlit.components.v1 as components
 
 #BACKLOG
 
-# marcas e patentes.
-#- definir praias para cada estação
+# definir praias para cada estação
 # inserir informação sobre a praia
 #- contador de visita
-
 #https://stackoverflow.com/questions/77377439/how-to-change-font-size-in-streamlit
-
-
 #from geopy.geocoders import Nominatim
 #import  geopy
 #icones streamlit https://www.webfx.com/tools/emoji-cheat-sheet/
 #https://geopy.readthedocs.io/en/stable/
-
 #https://folium.streamlit.app/ exemplos usando folium
 #https://python-graph-gallery.com/312-add-markers-on-folium-map/
-
 #**** folium está utilizando a versão v4 do font awesome: https://fontawesome.com/v4/icons/
 
 
@@ -39,12 +33,10 @@ st.set_page_config(
     menu_items=None
 )
 
-# Include Google Analytics tracking code
-with open("google_analytics.html", "r") as f:
-    html_code = f.read()
-    components.html(html_code, height=0)
+database = "./data/praiometro.db"
+csv_visitors = "./data/visitors.csv"
 
-st.sidebar.markdown("""<head><meta name="google-site-verification" content="iSSzEDQM16yAYKp8VZWJcY-_d4ucSJGoTqQKi8eGEOs" /></head>""",unsafe_allow_html=True,)
+st.sidebar.markdown("""<head></head>""",unsafe_allow_html=True,)
 
 st.title('Descubra o paraíso em todas as estações com o Praiômetro!')
 st.subheader('Planeje suas férias perfeitas, escolhendo as melhores praias para cada mês.')
@@ -78,7 +70,7 @@ def change_label_style(label, font_size='12px', font_color='black', font_family=
     st.components.v1.html(html)
 
 def load_data(selected_date,praia):
-    conn = sqlite3.connect("praiometro.db")
+    conn = sqlite3.connect(database)
     if praia == 'Não':
         query = f"select * from estacao_view where mes_medicao = '{selected_date}'"
     else:
@@ -88,7 +80,7 @@ def load_data(selected_date,praia):
     return df
 
 def cidades_selecionadas(data,chuva,temperatura,precipitacao,praia):
-    conn = sqlite3.connect("praiometro.db")
+    conn = sqlite3.connect(database)
     if praia == 'Não':
         query = f"select * from estacao_view where mes_medicao = '{data}' and media_dias_chuva  < {chuva} and media_temperatura_media > {temperatura} and media_precipitacao_total < {precipitacao}"
     else: 
@@ -201,7 +193,7 @@ def atualiza_contador_visitas():
 
         visitor_ip = get_visitor_ip()
 
-        with open('visitors.csv', 'a', newline='') as file:
+        with open(csv_visitors, 'a', newline='') as file:
             writer = csv.writer(file)
             writer.writerow([visitor_ip, datetime.now()])
  
@@ -226,7 +218,7 @@ def main():
     
     
     # Carrega as datas únicas disponíveis na base de dados
-    conn = sqlite3.connect("praiometro.db")
+    conn = sqlite3.connect(database)
     unique_months = pd.read_sql_query("select DISTINCT mes_medicao from estacao_view", conn)['mes_medicao'].tolist()
 
     data_maxmin     = pd.read_sql_query("select min(media_dias_chuva) as min_chuva, max(media_dias_chuva) as max_chuva, min(media_temperatura_media) as min_temp, max(media_temperatura_media) as max_temp ,min(media_precipitacao_total) as min_precip, max(media_precipitacao_total) as max_precip  from estacao_view",conn)
@@ -242,7 +234,7 @@ def main():
     # FORM SIDEBAR 
     with st.sidebar:
 
-        logo_url = "./logo_praiometro_transparente.png"
+        logo_url = "./assets/logo_praiometro_transparente.png"
         st.image(logo_url)
         dfmeses = ['Janeiro','Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho' , 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
    
