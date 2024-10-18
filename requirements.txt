@@ -1,0 +1,8 @@
+streamlit
+sqlite3
+pandas
+folium
+streamlit-folium
+datetime
+urllib3
+csv
