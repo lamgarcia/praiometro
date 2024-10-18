@@ -39,7 +39,7 @@ jobs:
       run: |
         pytest 
 
-    # Opcional: Executa linters para garantir a qualidade do código
-    #- name: Run linters
-    #  run: |
-    #    flake8 .
+    # xecuta linters para garantir a qualidade do código
+    - name: Run linters
+      run: |
+        flake8 .
