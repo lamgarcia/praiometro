@@ -1,3 +1,7 @@
+Trabalho Final ECD11 - Pipeline de Integração Contínua
+Aluno: Luiz Antônio Marques Garcia
+Professor: Guilherme Lacerda
+
 # 1. Repositório de Código
 O Projeto
 
