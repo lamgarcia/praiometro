@@ -7,6 +7,17 @@ O projeto foi feito por mim, no início deste ano, para facilitar os destinos a 
 
 O projeto até então era apenas um código feito no meu computador, sem git ou versionamento, estruturação de código. Todos os arquivos do projeto estão na raiz de uma pasta que era enviada para a hospedagem. Achei uma ótima ideia utilizá-lo para o trabalho final da disciplina ECD11 /UFRGS do professor Guilhmerme Lacerda e conseguir atualizá-lo com mais frequência.
 
+## Diagrama do Pipeline 
+
+```mermaid
+graph LR
+  A[Trigger: Push ou Pull para os branchs main, feature ou hotfix] --> C[Check out do código]
+  C --> D[Configura ambiente - Ubuntu e Python]
+  D --> E[Instala dependências do Python]
+  E --> F[Teste automatizado - PyTest]
+  F --> G[Análise de código - Flake8]
+```
+
 ## Repositório
 Criado repositório: https://github.com/lamgarcia/praiometro
 
@@ -70,4 +81,5 @@ pip install -r requirements.txt
 
 ##  Como executar
 streamlit run praiometro.py
+
 Abra a aplicação no navegador: http://127.0.0.1:8502/
