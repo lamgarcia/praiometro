@@ -25,4 +25,5 @@ pip install -r requirements.txt
 
 # Como executar
 streamlit run praiometro.py
+Abra a aplicação no navegador: http://127.0.0.1:8502/
 
