@@ -34,9 +34,12 @@ Criado repositório: https://github.com/lamgarcia/praiometro
 
 ## Organização do código
 
-Foi criado uma estrutura de pastas: assets (imagens e outros) , data (database e arquivos a serem salvos), tests (para artefato dos testes automatizados).
-O código é em python e foi criado uma arquivo requirements.txt para instalar as dependências.
-O código principal é o praiometro.py e é chamado a partir do framework Streamlit com o comando streamlit run praiometro.py. 
+Foi criado uma estrutura de pastas: 
+* assets (imagens e outros)
+* data (database e arquivos a serem salvos)
+* tests (para artefato dos testes automatizados).
+
+O código é em python e foi criado um arquivo requirements.txt para instalação das dependências. O código principal é o praiometro.py e é chamado a partir do framework Streamlit. 
 
 ## Versionamento
 
@@ -56,7 +59,7 @@ Utilizando o Conventional Commits (https://www.conventionalcommits.org/en/v1.0.0
 
 ## Estruturação de Branches
 
-Será utilizado Trunk-Based Developement, com uma branch principal (main) e duas branch de vida curta feature para novas funcionalidades e hotfix para correções e manutenções . Essa estrutura proporciona rápida integração e entrega contínua. 
+Será utilizado Trunk-Based Developement, com uma branch principal (**main**) e duas branch de vida curta **feature** para novas funcionalidades e **hotfix** para correções e manutenções. Essa estrutura proporciona rápida integração e entrega contínua. 
 
 O nome da branch deve indicar a alteração que será feita, por exemplo, “feature\novo-mapa-de-temperatura” ou “hotfix\corrigindo-menu-meses”.
 
