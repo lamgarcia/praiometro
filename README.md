@@ -27,10 +27,10 @@ Criado repositório: https://github.com/lamgarcia/praiometro
 
 ## STACK de Desenvolvimento
 
-Streamlit - FrontEnd
-Sqlite - Database
-Folium - Maps
-Pandas - Data Analysis
+* Streamlit - FrontEnd
+* Sqlite - Database
+* Folium - Maps
+* Pandas - Data Analysis
 
 ## Organização do código
 
