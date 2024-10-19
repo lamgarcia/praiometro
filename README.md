@@ -38,17 +38,17 @@ O código principal é o praiometro.py e é chamado a partir do framework Stream
 
 Para versionamento será adotada a estrutura abaixo:
 
-Major - Mudas muitos latentes que interferem na compatibilidade de versão  ou disruptiva se comparada com a versão anterior (v2.0.0)
-Minor - Mudanças que entregam valor no código existente (v.1.1.0)
-Patch - Correção de bugs e manutenções sem entrega de valor aparente.
+* Major - Mudas muitos latentes que interferem na compatibilidade de versão  ou disruptiva se comparada com a versão anterior (v2.0.0)
+* Minor - Mudanças que entregam valor no código existente (v.1.1.0)
+* Patch - Correção de bugs e manutenções sem entrega de valor aparente.
 
 ## Convenções de commits
 
 Utilizando o Conventional Commits (https://www.conventionalcommits.org/en/v1.0.0/)  e considerando a simplicidade do projeto, serão utilizadas as seguintes convenções de commits::
 
-feat: para adicionar nova funcionalidade
-fix: corrigir bugs
-chore: para outras tarefas de manutenção 
+* feat: para adicionar nova funcionalidade
+* fix: corrigir bugs
+* chore: para outras tarefas de manutenção 
 
 ## Estruturação de Branches
 
@@ -71,10 +71,9 @@ Os testes são executados a cada mudança do repositório.
 Para análise de qualidade de código no Pipeline foi utilizado o Flake8. A configuração e exceções foram colocadas no arquivo setup.cfg.
 
 # 5. Deploy
-O deploy automatizado ainda não foi realizado na estrutura de VPS  na empresa contratada.
 
 ## Demo
-Mas uma demo da aplicação pode ser vista em: http://praiometro.com.br/
+O deploy automatizado ainda não foi realizado na estrutura de VPS na empresa contratada. Mas uma demo da aplicação pode ser vista em: http://praiometro.com.br/
 
 ## Dependências para execuções locais
 pip install -r requirements.txt
@@ -83,3 +82,6 @@ pip install -r requirements.txt
 streamlit run praiometro.py
 
 Abra a aplicação no navegador: http://127.0.0.1:8502/
+
+# 5. Trabalho futuros
+Alterar o código monolítico para mais modular, pois irá facilitar a compreensão, o desenvolvimento futuro e os testes automatizados.
