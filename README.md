@@ -38,10 +38,16 @@ O nome do projeto é Praiômetro, onde o cliente pode verificar quais as praias 
 O projeto foi feito por mim, no início deste ano, para facilitar os destinos a serem escolhidos nas minhas férias. É inspirado nas tabelas de melhores praias do site https://www.viajenaviagem.com/praiometro-nordeste-caribe/, mas com melhorias evidentes como dados atualizados direto das estações meteorológicas, iteração com mapas e inclusão de quantidade de dias de chuva.
 
 O projeto até então era apenas um código feito no meu computador, sem git ou versionamento, estruturação de código. Todos os arquivos do projeto estão na raiz de uma pasta que era enviada para a hospedagem. Achei uma ótima ideia utilizá-lo para o trabalho final e conseguir atualizá-lo com mais frequência.
-Repositório
+
+## Repositório
 Criado repositório: https://github.com/lamgarcia/praiometro
 
-Demo: http://praiometro.com.br
+## STACK de Desenvolvimento
+
+Streamlit - FrontEnd
+Sqlite - Database
+Folium - Maps
+Pandas - Data Analysis
 
 ## Organização do código
 
@@ -85,4 +91,15 @@ Os testes são executados a cada mudança do repositório.
 
 Para análise de qualidade de código no Pipeline foi utilizado o Flake8. A configuração e exceções foram colocadas no arquivo setup.cfg.
 
+# 5. Deploy
+O deploy automatizado ainda não foi realizado na estrutura de VPS  na empresa contratada.
 
+## Demo
+Mas uma demo da aplicação pode ser vista em: http://praiometro.com.br/
+
+## Dependências para execuções locais
+pip install -r requirements.txt
+
+##  Como executar
+streamlit run praiometro.py
+Abra a aplicação no navegador: http://127.0.0.1:8502/
