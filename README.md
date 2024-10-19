@@ -1,35 +1,3 @@
-# Praiometro 
-
-O Praiometro mostra as melhores condições metereológicas das praias brasileiras ao longo do ano para escolher o melhor momento para suas férias.
-
-Projeto Praiometro foi criado por Luiz A. M. Garcia em nível de hobbie no início de 2024.
-
-Demo: http://praiometro.com.br/
-
-
-# Engenharia de Software em Ciência de dados UFRGS / 2024-2025
-Este repositório GIT foi criado para o trabalho final da disciplina de DevOps e Entrega Contínua do professor Guilherme Lacerda.
-
-# Fonte dos Dados
-Banco de Dados Meteorológicos do INMET - https://bdmep.inmet.gov.br/
-
-# STACK de Desenvolvimento
-
-Streamlit - FrontEnd
-Sqlite - Database
-Folium - Maps
-Pandas - Data Analysis
-
-# Instale as dependências
-pip install -r requirements.txt
-
-# Como executar
-streamlit run praiometro.py
-Abra a aplicação no navegador: http://127.0.0.1:8502/
-
-Trabalho Final - Pipeline de Integração Contínua
-
-
 # 1. Repositório de Código
 O Projeto
 
@@ -37,7 +5,7 @@ O nome do projeto é Praiômetro, onde o cliente pode verificar quais as praias 
 
 O projeto foi feito por mim, no início deste ano, para facilitar os destinos a serem escolhidos nas minhas férias. É inspirado nas tabelas de melhores praias do site https://www.viajenaviagem.com/praiometro-nordeste-caribe/, mas com melhorias evidentes como dados atualizados direto das estações meteorológicas, iteração com mapas e inclusão de quantidade de dias de chuva.
 
-O projeto até então era apenas um código feito no meu computador, sem git ou versionamento, estruturação de código. Todos os arquivos do projeto estão na raiz de uma pasta que era enviada para a hospedagem. Achei uma ótima ideia utilizá-lo para o trabalho final e conseguir atualizá-lo com mais frequência.
+O projeto até então era apenas um código feito no meu computador, sem git ou versionamento, estruturação de código. Todos os arquivos do projeto estão na raiz de uma pasta que era enviada para a hospedagem. Achei uma ótima ideia utilizá-lo para o trabalho final da disciplina ECD11 /UFRGS do professor Guilhmerme Lacerda e conseguir atualizá-lo com mais frequência.
 
 ## Repositório
 Criado repositório: https://github.com/lamgarcia/praiometro
