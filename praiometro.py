@@ -95,7 +95,7 @@ def new_map_chuva(df, max_chuva):
             popup=f"{row['nome']}. Dias de Chuva: {row['media_dias_chuva']}."
         ).add_to(m)
 
-    st_data = st_folium(m, width=500, height=500)
+    st_folium(m, width=500, height=500)
 
 
 def new_map_temperatura(df, min_temp):
@@ -116,7 +116,7 @@ def new_map_temperatura(df, min_temp):
             popup=f"{row['nome']}. Temperatura: {row['media_temperatura_media']}."
         ).add_to(m)
 
-    st_data = st_folium(m, width=500, height=500)
+    st_folium(m, width=500, height=500)
 
 
 def new_map_precipitacao(df, max_precipitacao):
@@ -138,7 +138,7 @@ def new_map_precipitacao(df, max_precipitacao):
             popup=f"{row['nome']}. Precipitação: {row['media_precipitacao_total']}."
         ).add_to(m)
 
-    st_data = st_folium(m, width=500, height=500)
+    st_folium(m, width=500, height=500)
 
 
 def new_map(df):
@@ -153,7 +153,7 @@ def new_map(df):
         Temperatura: %s <br>
         Dias de chuva: %s <br>
         Precipitação: %s <br>
-        """  % (row['nome'], temperatura, chuvas, precipitacao)
+        """ % (row['nome'], temperatura, chuvas, precipitacao)
 
         icone1 = folium.Icon(icon="sun-o", icon_color="yellow", color="cadetblue", prefix="fa")
         folium.Marker(
@@ -162,7 +162,7 @@ def new_map(df):
             icon=icone1
         ).add_to(m)
 
-    st_data = st_folium(m, width="30%")
+    st_folium(m, width="30%")
 
 
 # Função para verificar se o cookie de visita já existe
@@ -218,8 +218,8 @@ def main():
 
     data_maxmin = pd.read_sql_query("select min(media_dias_chuva) as min_chuva, max(media_dias_chuva) as max_chuva, min(media_temperatura_media) as min_temp, max(media_temperatura_media) as max_temp ,min(media_precipitacao_total) as min_precip, max(media_precipitacao_total) as max_precip  from estacao_view", conn)
     max_bd_chuva = int(data_maxmin.max_chuva.values[0])
-    min_bd_chuva = int(data_maxmin.min_chuva.values[0])+1
-    max_bd_temp = int(data_maxmin.max_temp.values[0])-1
+    min_bd_chuva = int(data_maxmin.min_chuva.values[0]) + 1
+    max_bd_temp = int(data_maxmin.max_temp.values[0]) - 1
     min_bd_temp = int(data_maxmin.min_temp.values[0])
     max_bd_precip = int(data_maxmin.max_precip.values[0])
     min_bd_precip = int(data_maxmin.min_precip.values[0])
@@ -238,7 +238,7 @@ def main():
 
         indexmeses = dfmeses.index(mes_texto) + 1
         if indexmeses < 10:
-            selected_date_mensal = "0"+str(indexmeses)
+            selected_date_mensal = "0" + str(indexmeses)
         else:
             selected_date_mensal = str(indexmeses)
 
@@ -310,7 +310,7 @@ def main():
                 colb2.metric("Chuva", chuvas + " dias")
                 colb3.metric("Precipitação", precipitacao + "mm")
 
-    col1, col2, col3 = st.columns(3) 
+    col1, col2, col3 = st.columns(3)
 
     with col1:
         st.header("**DIAS DE CHUVA** 🌦")
@@ -331,7 +331,9 @@ def main():
     atualiza_contador_visitas()
     st.session_state.cookie_expires_at = datetime.now() + timedelta(days=1)
 
-    st.write("*Nossos dados são atualizados das estações metereológicas do [INMET](https://portal.inmet.gov.br/) para transformar suas viagens em experiências inesquecíveis. Não fazemos previsões metereológicas, calculamos uma média dos anos passados recentes. Bem como ocorre nas previsões de tempo, não há garantias de 100% de que se repetirá no futuro. As cidades listadas são das estações metereológica, verifique se é perto do seu destino no mapa. As principais cidades de férias estão disponíveis como Fortaleza, Natal, Recife, João Pessoa, Aracaju, Salvador, Maceió, Rio de Janeiro, São Paulo, Florianópolis e outras.")
+    st.write("*Nossos dados são atualizados das estações metereológicas do [INMET](https://portal.inmet.gov.br/) para transformar suas viagens em experiências inesquecíveis. Não fazemos previsões metereológicas,"
+             + "calculamos uma média dos anos passados recentes. Bem como ocorre nas previsões de tempo, não há garantias de 100% de que se repetirá no futuro. As cidades listadas são das estações metereológica,"
+             + " verifique se é perto do seu destino no mapa. As principais cidades de férias estão disponíveis como Fortaleza, Natal, Recife, João Pessoa, Aracaju, Salvador, Maceió, Rio de Janeiro, São Paulo, Florianópolis e outras.")
 
 
 if __name__ == "__main__":

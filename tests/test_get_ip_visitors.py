@@ -8,7 +8,6 @@ from unittest.mock import patch
 from praiometro import get_visitor_ip  #
 
 
-
 @patch('urllib.request.urlopen')
 def test_get_visitor_ip(mock_urlopen):
 
